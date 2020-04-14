@@ -1,5 +1,5 @@
 Add LoadPath "/Users/lubis/Documents/study/software_foundations".
-Require Import Basics.
+Require Export Basics.
 
 Theorem plus_n_O_firsttry:
   forall n: nat, n = n + 0.
@@ -94,6 +94,9 @@ Fixpoint evenb (n:nat) : bool :=
   | S O => false
   | S (S n') => evenb n'
   end.
+
+Definition oddb (n:nat) : bool :=
+  negb (evenb n).
 
 Lemma negb_negb_bool:
   forall b: bool, negb (negb b) = b.
@@ -269,23 +272,25 @@ Proof.
   - simpl. rewrite -> IHn'. reflexivity.
 Qed.
 
-Theorem bin_to_nat_pres_incr:
-  forall b: bin, bin_to_nat (incr b) = S (bin_to_nat b).
+Theorem incr_bin_to_nat_eq:
+  forall n: bin,
+  S (bin_to_nat n) = bin_to_nat (incr n).
 Proof.
-  intros b.
-  induction b as [|x'|y' IHb'].
+  intros n. 
+  induction n as [| a' | b' IHn].
   - simpl. reflexivity.
   - simpl. reflexivity.
-  - simpl. rewrite -> IHb'.
-    replace (S (bin_to_nat y') + 0) with (S (bin_to_nat y')).
-    replace (S (S (bin_to_nat y' + (bin_to_nat y' + 0)))) with
-            (S (bin_to_nat y') + S (bin_to_nat y')).
-    reflexivity.
-    assert (H1: bin_to_nat y' + 0 = bin_to_nat y').
-      { rewrite -> plus_comm. simpl. reflexivity. }
-    rewrite -> H1. 
-    
-    
-
+  - simpl. rewrite -> plus_n_Sm.
+    replace (bin_to_nat b' + S (bin_to_nat b' + 0))
+    with (S (bin_to_nat b' + 0) + bin_to_nat b').
+    rewrite -> plus_n_Sm.
+    rewrite -> IHn.
+    replace (bin_to_nat b' + 0) with (0 + bin_to_nat b').
+    rewrite -> plus_n_Sm.
+    rewrite -> IHn.
+    simpl. rewrite <- plus_n_O. reflexivity.
+    + rewrite -> plus_comm. reflexivity.
+    + rewrite -> plus_comm. reflexivity.
+Qed.
 
 (* Exercise ends. *)

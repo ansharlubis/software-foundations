@@ -1,0 +1,278 @@
+DIGEST 178b6edd8b89fe7c6b7467646c59ad04
+FLists
+R81:89 Induction <> <> lib
+ind 103:109 <> natprod
+constr 124:127 <> pair
+R137:139 Coq.Init.Datatypes <> nat ind
+R141:141 Lists <> natprod ind
+def 155:157 <> fst
+R162:168 Lists <> natprod ind
+R173:175 Coq.Init.Datatypes <> nat ind
+R188:188 Lists <> p var
+R199:202 Lists <> pair constr
+def 232:234 <> snd
+R239:245 Lists <> natprod ind
+R250:252 Coq.Init.Datatypes <> nat ind
+R265:265 Lists <> p var
+R276:279 Lists <> pair constr
+R323:326 Lists <> pair constr
+not 307:307 <> :::'('_x_','_x_')'
+def 346:349 <> fst'
+R354:360 Lists <> natprod ind
+R365:367 Coq.Init.Datatypes <> nat ind
+R380:380 Lists <> p var
+R391:391 Lists <> :::'('_x_','_x_')' not
+R393:393 Lists <> :::'('_x_','_x_')' not
+R395:395 Lists <> :::'('_x_','_x_')' not
+def 421:424 <> snd'
+R429:435 Lists <> natprod ind
+R440:442 Coq.Init.Datatypes <> nat ind
+R455:455 Lists <> p var
+R466:466 Lists <> :::'('_x_','_x_')' not
+R468:468 Lists <> :::'('_x_','_x_')' not
+R470:470 Lists <> :::'('_x_','_x_')' not
+def 496:504 <> swap_pair
+R509:515 Lists <> natprod ind
+R520:526 Lists <> natprod ind
+R539:539 Lists <> p var
+R550:550 Lists <> :::'('_x_','_x_')' not
+R552:552 Lists <> :::'('_x_','_x_')' not
+R554:554 Lists <> :::'('_x_','_x_')' not
+R559:559 Lists <> :::'('_x_','_x_')' not
+R561:561 Lists <> :::'('_x_','_x_')' not
+R563:563 Lists <> :::'('_x_','_x_')' not
+prf 581:599 <> surjective_pairing'
+R616:618 Coq.Init.Datatypes <> nat ind
+R626:628 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R621:621 Lists <> :::'('_x_','_x_')' not
+R623:623 Lists <> :::'('_x_','_x_')' not
+R625:625 Lists <> :::'('_x_','_x_')' not
+R622:622 Lists <> n var
+R624:624 Lists <> m var
+R629:629 Lists <> :::'('_x_','_x_')' not
+R639:640 Lists <> :::'('_x_','_x_')' not
+R650:650 Lists <> :::'('_x_','_x_')' not
+R630:632 Lists <> fst def
+R634:634 Lists <> :::'('_x_','_x_')' not
+R636:636 Lists <> :::'('_x_','_x_')' not
+R638:638 Lists <> :::'('_x_','_x_')' not
+R635:635 Lists <> n var
+R637:637 Lists <> m var
+R641:643 Lists <> snd def
+R645:645 Lists <> :::'('_x_','_x_')' not
+R647:647 Lists <> :::'('_x_','_x_')' not
+R649:649 Lists <> :::'('_x_','_x_')' not
+R646:646 Lists <> n var
+R648:648 Lists <> m var
+prf 687:710 <> surjective_pairing_stuck
+R725:731 Lists <> natprod ind
+R735:737 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R734:734 Lists <> p var
+R738:738 Lists <> :::'('_x_','_x_')' not
+R744:745 Lists <> :::'('_x_','_x_')' not
+R751:751 Lists <> :::'('_x_','_x_')' not
+R739:741 Lists <> fst def
+R743:743 Lists <> p var
+R746:748 Lists <> snd def
+R750:750 Lists <> p var
+prf 777:794 <> surjective_pairing
+R809:815 Lists <> natprod ind
+R819:821 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R818:818 Lists <> p var
+R822:822 Lists <> :::'('_x_','_x_')' not
+R828:829 Lists <> :::'('_x_','_x_')' not
+R835:835 Lists <> :::'('_x_','_x_')' not
+R823:825 Lists <> fst def
+R827:827 Lists <> p var
+R830:832 Lists <> snd def
+R834:834 Lists <> p var
+prf 930:944 <> snd_fst_is_swap
+R959:965 Lists <> natprod ind
+R982:984 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R968:968 Lists <> :::'('_x_','_x_')' not
+R974:975 Lists <> :::'('_x_','_x_')' not
+R981:981 Lists <> :::'('_x_','_x_')' not
+R969:971 Lists <> snd def
+R973:973 Lists <> p var
+R976:978 Lists <> fst def
+R980:980 Lists <> p var
+R985:993 Lists <> swap_pair def
+R995:995 Lists <> p var
+prf 1074:1088 <> fst_swap_is_snd
+R1103:1109 Lists <> natprod ind
+R1129:1131 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1112:1114 Lists <> fst def
+R1117:1125 Lists <> swap_pair def
+R1127:1127 Lists <> p var
+R1132:1134 Lists <> snd def
+R1136:1136 Lists <> p var
+ind 1238:1244 <> natlist
+constr 1259:1261 <> nil
+constr 1267:1270 <> cons
+R1262:1262 Lists <> natlist ind
+R1276:1278 Coq.Init.Datatypes <> nat ind
+R1285:1291 Lists <> natlist ind
+R1293:1293 Lists <> natlist ind
+def 1307:1312 <> mylist
+R1317:1320 Lists <> cons constr
+R1325:1328 Lists <> cons constr
+R1333:1336 Lists <> cons constr
+R1340:1342 Lists <> nil constr
+R1370:1373 Lists <> cons constr
+not 1357:1357 <> :::x_'::'_x
+R1433:1435 Lists <> nil constr
+not 1425:1425 <> :::'[]'
+R1468:1471 Lists <> cons constr
+R1479:1482 Lists <> cons constr
+R1486:1488 Lists <> nil constr
+not 1447:1447 <> :::'['_x_';'_'..'_';'_x_']'
+def 1506:1511 <> repeat
+R1523:1525 Coq.Init.Datatypes <> nat ind
+R1530:1536 Lists <> natlist ind
+R1549:1553 Lists <> count var
+R1564:1564 Coq.Init.Datatypes <> O constr
+R1569:1571 Lists <> nil constr
+R1577:1577 Coq.Init.Datatypes <> S constr
+R1590:1594 Lists <> :::x_'::'_x not
+R1610:1610 Lists <> :::x_'::'_x not
+R1589:1589 Lists <> n var
+R1595:1600 Lists <> repeat def
+R1602:1602 Lists <> n var
+def 1629:1634 <> length
+R1640:1646 Lists <> natlist ind
+R1651:1653 Coq.Init.Datatypes <> nat ind
+R1666:1666 Lists <> l var
+R1677:1679 Lists <> nil constr
+R1684:1684 Coq.Init.Datatypes <> O constr
+R1691:1694 Lists <> :::x_'::'_x not
+R1700:1700 Coq.Init.Datatypes <> S constr
+R1703:1708 Lists <> length def
+def 1730:1732 <> app
+R1742:1748 Lists <> natlist ind
+R1753:1759 Lists <> natlist ind
+R1772:1773 Lists <> l1 var
+R1784:1786 Lists <> nil constr
+R1791:1792 Lists <> l2 var
+R1799:1802 Lists <> :::x_'::'_x not
+R1809:1813 Lists <> :::x_'::'_x not
+R1822:1822 Lists <> :::x_'::'_x not
+R1814:1816 Lists <> app def
+R1820:1821 Lists <> l2 var
+R1854:1856 Lists <> app def
+not 1841:1841 <> :::x_'++'_x
+def 1908:1916 <> test_app1
+R1935:1937 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1926:1929 Lists <> :::x_'++'_x not
+R1919:1919 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1921:1921 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1923:1923 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1925:1925 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1930:1930 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1932:1932 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1934:1934 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1938:1938 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1940:1940 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1942:1942 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1944:1944 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1946:1946 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R1948:1948 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 1984:1992 <> test_app2
+R2007:2009 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1998:2001 Lists <> :::x_'++'_x not
+R1995:1997 Lists <> nil constr
+R2002:2002 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2004:2004 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2006:2006 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2010:2010 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2012:2012 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2014:2014 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 2050:2058 <> test_app3
+R2075:2077 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2068:2071 Lists <> :::x_'++'_x not
+R2061:2061 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2063:2063 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2065:2065 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2067:2067 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2072:2074 Lists <> nil constr
+R2078:2078 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2080:2080 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2082:2082 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2084:2084 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 2124:2125 <> hd
+R2137:2139 Coq.Init.Datatypes <> nat ind
+R2146:2152 Lists <> natlist ind
+R2157:2159 Coq.Init.Datatypes <> nat ind
+R2172:2172 Lists <> l var
+R2183:2185 Lists <> nil constr
+R2190:2196 Lists <> default var
+R2203:2206 Lists <> :::x_'::'_x not
+def 2233:2234 <> tl
+R2240:2246 Lists <> natlist ind
+R2251:2257 Lists <> natlist ind
+R2270:2270 Lists <> l var
+R2281:2283 Lists <> nil constr
+R2288:2290 Lists <> nil constr
+R2297:2300 Lists <> :::x_'::'_x not
+def 2324:2331 <> test_hd1
+R2346:2348 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2334:2335 Lists <> hd def
+R2339:2339 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2341:2341 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2343:2343 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2345:2345 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 2385:2392 <> test_hd2
+R2402:2404 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2395:2396 Lists <> hd def
+R2400:2401 Lists <> :::'[]' not
+def 2441:2447 <> test_tl
+R2460:2462 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2450:2451 Lists <> tl def
+R2453:2453 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2455:2455 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2457:2457 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2459:2459 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2463:2463 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2465:2465 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2467:2467 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 2538:2545 <> nonzeros
+R2551:2557 Lists <> natlist ind
+R2562:2568 Lists <> natlist ind
+R2581:2581 Lists <> l var
+R2592:2594 Lists <> nil constr
+R2599:2601 Lists <> nil constr
+R2608:2611 Lists <> :::x_'::'_x not
+R2642:2642 Coq.Init.Datatypes <> O constr
+R2647:2654 Lists <> nonzeros def
+R2664:2664 Coq.Init.Datatypes <> S constr
+R2672:2676 Lists <> :::x_'::'_x not
+R2687:2687 Lists <> :::x_'::'_x not
+R2677:2684 Lists <> nonzeros def
+def 2713:2725 <> test_nonzeros
+R2754:2756 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2730:2737 Lists <> nonzeros def
+R2739:2739 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2741:2741 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2743:2743 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2745:2745 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2747:2747 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2749:2749 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2751:2751 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2753:2753 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2757:2757 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2759:2759 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2761:2761 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2763:2763 Lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 2801:2810 <> oddmembers
+R2816:2822 Lists <> natlist ind
+R2827:2833 Lists <> natlist ind
+R2846:2846 Lists <> l var
+R2857:2859 Lists <> nil constr
+R2864:2866 Lists <> nil constr
+R2873:2876 Lists <> :::x_'::'_x not
+R2893:2897 Induction <> evenb def
+R2913:2917 Coq.Init.Datatypes <> false constr
+R2923:2927 Lists <> :::x_'::'_x not
+R2940:2940 Lists <> :::x_'::'_x not
+R2928:2937 Lists <> oddmembers def
+R2948:2951 Coq.Init.Datatypes <> true constr
+R2956:2965 Lists <> oddmembers def
