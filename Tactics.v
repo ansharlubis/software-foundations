@@ -355,8 +355,114 @@ Qed.
 
 (* Page 107 Exercise *)
 
+Lemma combine_split_lemma:
+  forall (X Y: Type) (p: X*Y) (l1 l2: list (X*Y)),
+  l1 = l2 -> p :: l1 = p :: l2.
+Proof.
+  intros X Y p l1 l2 eq.
+  inversion eq. reflexivity.
+Qed.
 
-      
-    
+Theorem combine_split:
+  forall (X Y: Type) (l: list (X*Y)) l1 l2,
+  split l = (l1,l2) -> combine l1 l2 = l.
+Proof.
+  intros X Y. induction l as [| p l' IHl'].
+  - intros l1 l2. simpl. intros eq. inversion eq. reflexivity.
+  - intros l1 l2. simpl. destruct p. destruct (split l').
+    destruct l1 as [| x1 l1'] eqn:E1.
+    + intros eq1. inversion eq1.
+    + destruct l2 as [| x2 l2'] eqn:E2.
+        intros eq1. inversion eq1.
+        intros eq1. inversion eq1. simpl.
+        apply combine_split_lemma. apply IHl'.
+        rewrite H1. rewrite H3. reflexivity.
+Qed.
+        
+
+(* Exercise Ends *)
+
+Definition sillyfun1 (n: nat) : bool :=
+  if n =? 3 then true
+  else if n =? 5 then true
+  else false.
+
+Theorem sillyfun1_odd_FAILED:
+  forall n: nat, sillyfun1 n = true -> oddb n = true.
+Proof.
+  intros n eq. unfold sillyfun1 in eq.
+  destruct (n =? 3).
+Abort.
+
+Theorem sillyfun1_odd: forall n: nat,
+  sillyfun1 n = true -> oddb n = true.
+Proof. 
+  intros n eq. unfold sillyfun1 in eq.
+  destruct (n =? 3) eqn:Heqe3.
+  - apply eqb_true in Heqe3. rewrite -> Heqe3. reflexivity.
+  - destruct (n =? 5) eqn:Heqe5.
+    + apply eqb_true in Heqe5. rewrite -> Heqe5. reflexivity.
+    + discriminate.
+Qed.
+
+(* Page 109 Exercise *)
+
+Theorem bool_fn_applied_thrice:
+  forall (f: bool -> bool) (b: bool),
+  f (f (f b)) = f b.
+Proof.
+  intros f b. destruct b eqn:eb.
+  - destruct (f true) eqn:ftrue.
+    + rewrite -> ftrue. rewrite -> ftrue. reflexivity.
+    + destruct (f false) eqn:ffalse.
+      * rewrite -> ftrue. reflexivity.
+      * rewrite -> ffalse. reflexivity.
+  - destruct (f false) eqn:ffalse.
+    + destruct (f true) eqn:ftrue.
+      * rewrite -> ftrue. reflexivity.
+      * rewrite -> ffalse. reflexivity.
+    + rewrite -> ffalse. rewrite -> ffalse.
+      reflexivity.
+Qed.
+
+(* Exercise Ends *)
+
+(* Page 110 Exercise *)
+
+Theorem eqb_sym:
+  forall n m: nat, (n =? m) = (m =? n).
+Proof.
+  intros n. induction n as [| n' IHn'].
+  - intros m. destruct m as [| m'].
+    + reflexivity.
+    + reflexivity.
+  - intros m. destruct m as [| m'].
+    + reflexivity.
+    + simpl. apply IHn'.
+Qed.
+
+Theorem eqb_trans:
+  forall n m p,
+  n =? m = true -> m =? p = true -> n =? p = true.
+Proof.
+  intros n m p eq1 eq2.
+  apply eqb_true in eq1. apply eqb_true in eq2.
+  rewrite -> eq1. rewrite -> eq2. rewrite <- eqb_refl.
+  reflexivity.
+Qed.
+
+Theorem split_combine:
+  forall (X Y: Type) (l1: list X) (l2: list Y),
+  length l1 = length l2 -> 
+  split (combine l1 l2) = (l1, l2).
+Proof.
+  intros X Y l1. induction l1 as [| x1 l1' IHl1'].
+  - intros l2. destruct l2 as [| x2 l2'].
+    + reflexivity.
+    + simpl. discriminate.
+  - intros l2. destruct l2 as [| x2 l2'].
+    + simpl. discriminate.
+    + intros eqLength.
+Abort.
 
 (* Exercise Ends *)
