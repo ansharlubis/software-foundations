@@ -1,4 +1,4 @@
-DIGEST d63ffdefc76187314f276e7711613f17
+DIGEST aacdc6cd88f6a627c6f92a5d7946bee2
 FTactics
 R126:129 Poly <> <> lib
 R147:151 Lists <> <> lib
@@ -670,26 +670,3 @@ R7455:7458 Basics <> ::nat_scope:x_'=?'_x not
 R7455:7458 Basics <> ::nat_scope:x_'=?'_x not
 R7502:7505 Basics <> ::nat_scope:x_'=?'_x not
 R7502:7505 Basics <> ::nat_scope:x_'=?'_x not
-prf 7594:7606 <> combine_split
-R7634:7637 Poly <> list ind
-R7641:7643 Poly <> ::type_scope:x_'*'_x not
-R7640:7640 Tactics <> X var
-R7644:7644 Tactics <> Y var
-R7653:7656 Poly <> list ind
-R7658:7658 Tactics <> X var
-R7666:7669 Poly <> list ind
-R7671:7671 Tactics <> Y var
-R7694:7697 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7711:7713 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R7698:7704 Poly <> combine def
-R7709:7710 Tactics <> l2 var
-R7706:7707 Tactics <> l1 var
-R7714:7714 Tactics <> l var
-R7684:7686 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R7677:7681 Poly <> split def
-R7683:7683 Tactics <> l var
-R7687:7687 Poly <> :::'('_x_','_x_')' not
-R7690:7690 Poly <> :::'('_x_','_x_')' not
-R7693:7693 Poly <> :::'('_x_','_x_')' not
-R7688:7689 Tactics <> l1 var
-R7691:7692 Tactics <> l2 var
