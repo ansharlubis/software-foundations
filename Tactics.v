@@ -456,13 +456,98 @@ Theorem split_combine:
   length l1 = length l2 -> 
   split (combine l1 l2) = (l1, l2).
 Proof.
-  intros X Y l1. induction l1 as [| x1 l1' IHl1'].
-  - intros l2. destruct l2 as [| x2 l2'].
+  intros X Y. intros l1.
+  induction l1 as [| x1 l1' IHl1'].
+  - intros l2. destruct l2 as [| x2 l2].
     + reflexivity.
-    + simpl. discriminate.
-  - intros l2. destruct l2 as [| x2 l2'].
-    + simpl. discriminate.
-    + intros eqLength.
-Abort.
+    + discriminate.
+  - intros l2. destruct l2 as [| x2 l2].
+    + discriminate.
+    + simpl.
+      intros eq. inversion eq. apply IHl1' in H0.
+      rewrite -> H0. reflexivity.
+Qed.
 
+Theorem filter_exercise:
+  forall (X: Type) (test: X -> bool) (x: X) (l lf: list X),
+  filter test l = x :: lf -> test x = true.
+Proof.
+  intros X test x.
+  induction l as [| n l' IHl'].
+  - intros lf. discriminate.
+  - intros lf. destruct (test n) eqn:En.
+    + simpl. rewrite -> En.
+      intros eq. inversion eq.
+      rewrite -> H0 in En. apply En.
+    + simpl. rewrite -> En. 
+      intros eq. apply IHl' in eq.
+      apply eq.
+Qed.
+
+Fixpoint forallb {X: Type} (test: X -> bool) (l: list X) : bool :=
+  match l with
+  | [] => true
+  | x :: t => if (test x) then (forallb test t) else false
+  end.
+
+Fixpoint existsb {X: Type} (test: X -> bool) (l: list X) : bool :=
+  match l with
+  | [] => false
+  | x :: t => if (test x) then true else (existsb test t)
+  end.
+
+Example test_forallb_1 : forallb oddb [1;3;5;7;9] = true.
+Proof. reflexivity. Qed.
+
+Example test_forallb_2 : forallb negb [false;false] = true.
+Proof. reflexivity. Qed.
+
+Example test_forallb_3 : forallb evenb [0;2;4;5] = false.
+Proof. reflexivity. Qed.
+
+Example test_forallb_4 : forallb (eqb 5) [] = true.
+Proof. reflexivity. Qed.
+
+Example test_existsb_1 : existsb (eqb 5) [0;2;3;6] = false.
+Proof. reflexivity. Qed.
+
+Example test_existsb_2 : existsb (andb true) [true;true;false] = true.
+Proof. reflexivity. Qed.
+
+Example test_existsb_3 : existsb oddb [1;0;0;0;0;3] = true.
+Proof. reflexivity. Qed.
+
+Example test_existsb_4 : existsb evenb [] = false.
+Proof. reflexivity. Qed.
+
+Definition existsb' {X: Type} (test: X -> bool) (l: list X): bool :=
+  negb (forallb negb (map test l)).
+
+Example test_existsb'_1 : existsb' (eqb 5) [0;2;3;6] = false.
+Proof. reflexivity. Qed.
+
+Example test_existsb'_2 : existsb (andb true) [true;true;false] = true.
+Proof. reflexivity. Qed.
+
+Example test_existsb'_3 : existsb' oddb [1;0;0;0;0;3] = true.
+Proof. reflexivity. Qed.
+
+Example test_existsb'_4 : existsb' evenb [] = false.
+Proof. reflexivity. Qed.
+
+Theorem existsb_existsb':
+  forall (X: Type) (test: X -> bool) (l: list X),
+  existsb test l = existsb' test l.
+Proof.
+  intros X test l.
+  induction l as [| n l' IHl'].
+  - simpl. unfold existsb'. reflexivity.
+  - simpl. destruct (test n) eqn:En.
+    + unfold existsb'. simpl. rewrite -> En.
+      simpl. reflexivity.
+    + rewrite -> IHl'. unfold existsb'. 
+      simpl. rewrite -> En. simpl. reflexivity.
+Qed.
+  
+  
 (* Exercise Ends *)
